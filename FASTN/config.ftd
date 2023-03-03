@@ -1,5 +1,5 @@
 -- import: fifthtry.github.io/doc-site as ds
--- import: <user_name>.github.io/<repo_name>/assets
+-- import: fifthtry.github.io/wireframe-ms/assets
 
 -- component page:
 children wrapper:
