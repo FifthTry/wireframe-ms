@@ -1,0 +1,25 @@
+-- import: fastn
+
+-- fastn.package: fifthtry.github.io/wireframe-ms
+download-base-url: https://raw.githubusercontent.com/fifthtry/wireframe-ms/main
+
+-- fastn.dependency: fifthtry.github.io/doc-site
+-- fastn.dependency: fifthtry.github.io/ms-docs
+-- fastn.dependency: fifthtry.github.io/typography
+-- fastn.dependency: fifthtry.github.io/common
+-- fastn.dependency: fifthtry.github.io/virgil-font-typography
+
+-- fastn.auto-import: fifthtry.github.io/doc-site as ds
+-- fastn.auto-import: fifthtry.github.io/ms-docs
+-- fastn.auto-import: fifthtry.github.io/wireframe-ms/FASTN/config as my-ds
+-- fastn.auto-import: fifthtry.github.io/wireframe-ms/assets
+-- fastn.auto-import: fifthtry.github.io/typography as tf
+-- fastn.auto-import: fifthtry.github.io/common
+
+;; create new wireframe-cs as black and white theme using black and white colors
+
+
+-- fastn.sitemap:
+
+# Home: index.html
+- Master `hero` component: index.html
