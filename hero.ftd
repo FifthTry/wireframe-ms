@@ -6,10 +6,6 @@
 -- my-ds.page:
 
 -- hero-docs.hero-docs:
-code-title: Add below line into FASTN.ftd
-package-name: \-- fastn.dependency: fifthtry.github.io/wireframe-ms
-import-title: Add below line into your `.ftd` file
-import-line: \-- import: fifthtry.github.io/wireframe-ms/hero
 
 -- hero-without-image: Title of the hero component
 cta-text-1: Get Started
@@ -27,8 +23,9 @@ cta-text-2: Shop now
 cta-link-2: /
 image: $assets.files.static.wireframes.image-icon.svg
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-incididunt ut labore et dolore magna.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+tempor incididunt ut labore et dolore magna.
+
 
 -- end: hero-docs.hero-docs
 

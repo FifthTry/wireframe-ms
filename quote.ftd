@@ -1,0 +1,555 @@
+-- import: fifthtry.github.io/ms-docs/quote as quote-docs
+-- import: fifthtry.github.io/virgil-font-typography as typo
+
+
+
+
+-- my-ds.page:
+
+-- quote-docs.quote-docs:
+
+-- charcoal: Amit Upadhyay
+label: CEO
+avatar: https://fifthtry.github.io/bling/-/fifthtry.github.io/bling/static/amitu.jpg
+logo: https://fifthtry.github.io/bling/-/fifthtry.github.io/bling/static/fifthtry.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+tempor incididunt ut labore et dolore magna aliqua..
+
+-- marengo: Steve Jobs
+
+Your time is limited, so don't waste it living someone else's life. Don't 
+be trapped by dogma – which is living with the results of other people's 
+thinking.
+
+
+-- marengo-hug: Oprah Winfrey
+
+If you look at what you have in life, you'll always have more.
+If you look at what you don't have in life, you'll never have enough.
+
+-- end: quote-docs.quote-docs
+
+-- end: my-ds.page
+
+
+
+
+
+
+
+
+
+-- component charcoal:
+optional caption title:
+optional ftd.image-src quote-icon: https://fifthtry.github.io/bling/-/fifthtry.github.io/bling/static/quotes.svg
+optional body body:
+optional ftd.image-src avatar:
+optional ftd.image-src logo:
+optional string label:
+ftd.color backgroundcolor: $inherited.colors.background.base
+
+-- ftd.column:
+width: fill-container
+types: $typo.types
+
+-- quote-desktop: $charcoal.title
+if: { ftd.device != "mobile" }
+quote-icon: $charcoal.quote-icon
+body: $charcoal.body
+avatar: $charcoal.avatar
+logo: $charcoal.logo
+label: $charcoal.label
+backgroundcolor: $charcoal.backgroundcolor
+
+-- quote-mobile: $charcoal.title
+if: { ftd.device == "mobile" }
+body: $charcoal.body
+avatar: $charcoal.avatar
+logo: $charcoal.logo
+label: $charcoal.label
+backgroundcolor: $charcoal.backgroundcolor
+
+-- end: ftd.column
+
+-- end: charcoal
+
+
+
+
+
+
+
+
+
+
+-- component quote-desktop:
+optional caption title:
+optional ftd.image-src quote-icon: $assets.files.static.quotes.svg
+optional body body: 
+optional ftd.image-src avatar:
+optional ftd.image-src logo:
+optional string label:
+ftd.color backgroundcolor:
+
+
+-- ftd.column:
+width: fill-container
+padding-vertical.px: 64
+margin-top.px: 24
+margin-bottom.px: 24
+background.solid: $quote-desktop.backgroundcolor
+
+-- ftd.row:
+max-width.fixed.px: 1000
+spacing.fixed.px: 80
+align-self: center
+width: fill-container
+
+-- ftd.image:
+src: $quote-desktop.quote-icon
+width: auto
+height.fixed.px.fixed.px: 72
+
+-- ftd.column:
+width: fill-container
+max-width.fixed.px: 850
+
+-- ftd.text:
+text: $quote-desktop.body
+role: $inherited.types.heading-large
+color:$inherited.colors.text
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- ftd.row:
+width: fill-container
+margin-top.px: 24
+align-self: center
+max-width.fixed.px: 700
+
+-- ftd.image:
+src: $quote-desktop.avatar
+width: auto
+height.fixed.px.fixed.px: 60
+border-radius.px: 100
+margin-right.px: 20
+
+-- ftd.image:
+src: $quote-desktop.logo
+width: auto
+height.fixed.px.fixed.px: 44
+padding-top.px: 16
+margin-right.px: 48
+
+-- ftd.column: 
+width: fill-container
+
+-- ftd.text: $quote-desktop.title
+role: $inherited.types.heading-small
+color: $inherited.colors.text
+
+-- ftd.text: $quote-desktop.label
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: quote-desktop
+
+
+
+
+
+
+
+
+
+
+-- component quote-mobile:
+optional caption title:
+optional ftd.image-src quote-icon: $assets.files.static.quotes.svg
+optional body body: 
+optional ftd.image-src avatar:
+optional ftd.image-src logo:
+optional string label:
+ftd.color backgroundcolor:
+
+-- ftd.column:
+width: fill-container
+padding-vertical.px: 32
+padding-horizontal.px: 16
+background.solid: $quote-mobile.backgroundcolor
+margin-top.px: 24
+margin-bottom.px: 24
+
+-- ftd.image:
+src: $quote-mobile.quote-icon
+width: auto
+height.fixed.px: 42
+align-self: center
+margin-bottom.px: 24
+
+-- ftd.text:
+text: $quote-mobile.body
+width: auto
+role: $inherited.types.heading-small
+color: $inherited.colors.text
+margin-bottom.px: 24
+text-align: center
+
+-- ftd.row:
+spacing.fixed.px: 16
+align-self: center
+margin-bottom.px: 16
+
+-- ftd.image:
+src: $quote-mobile.avatar
+width: auto
+height.fixed.px: 42
+align-self: center
+border-radius.px: 100
+
+-- ftd.image:
+src: $quote-mobile.logo
+width: auto
+height.fixed.px: 24
+align-self: center
+
+-- end: ftd.row
+
+-- ftd.column: 
+spacing.fixed.px: 8
+align-self: center
+
+-- ftd.text: $quote-mobile.title
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+
+-- ftd.text: $quote-mobile.label
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+align-self: center
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: quote-mobile
+
+
+
+
+
+
+
+
+
+
+-- component marengo:
+optional caption title:
+body body:
+ftd.color backgroundcolor: $inherited.colors.background.base
+
+-- ftd.column:
+width: fill-container
+margin-top.px: 24
+margin-bottom.px: 24
+types: $typo.types
+
+-- quote-1-desktop: $marengo.title
+if: { ftd.device != "mobile" }
+body: $marengo.body
+backgroundcolor: $marengo.backgroundcolor
+
+-- quote-1-mobile: $marengo.title
+if: { ftd.device == "mobile" }
+body: $marengo.body
+backgroundcolor: $marengo.backgroundcolor
+
+-- end: ftd.column
+
+-- end: marengo
+
+
+
+
+
+
+
+
+
+
+-- component quote-1-desktop:
+body body:
+optional caption title:
+ftd.color backgroundcolor: $inherited.colors.background.base
+
+-- ftd.column:
+width: fill-container
+background.solid: $quote-1-desktop.backgroundcolor
+margin-top.px: 20
+margin-bottom.px: 24
+max-width.fixed.px: 1056
+
+-- ftd.row:
+width: fill-container
+border-left-width.px: 4
+padding-left.px: 40
+border-color: $inherited.colors.border
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.text: 
+text: $quote-1-desktop.body
+color: $inherited.colors.text
+role: $inherited.types.copy-large
+
+-- ftd.row:
+align-self: end
+spacing.fixed.px: 8
+margin-top.px: 16
+
+-- ftd.text: ~
+align-self: center
+color: $inherited.colors.text
+role: $inherited.types.copy-small
+
+-- ftd.text: $quote-1-desktop.title
+align-self: center
+color: $inherited.colors.text
+role: $inherited.types.fine-print
+white-space: nowrap
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: quote-1-desktop
+
+
+
+
+
+
+
+
+
+
+-- component quote-1-mobile:
+optional caption title:
+body body:
+ftd.color backgroundcolor:
+
+-- ftd.column:
+width: fill-container
+background.solid: $quote-1-mobile.backgroundcolor
+max-width.fixed.px: 1056
+
+-- ftd.row:
+width: fill-container
+border-left-width.px: 4
+padding-left.px: 32
+border-color: $inherited.colors.border
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.text: 
+text: $quote-1-mobile.body
+color: $inherited.colors.text
+role: $inherited.types.copy-small
+
+-- ftd.row:
+align-self: end
+spacing.fixed.px: 8
+
+-- ftd.text: ~
+color: $inherited.colors.text
+role: $inherited.types.copy-small
+
+-- ftd.text: $quote-1-mobile.title
+align-self: end
+color: $inherited.colors.text
+role: $inherited.types.fine-print
+white-space: nowrap
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: quote-1-mobile
+
+
+
+
+
+
+
+
+
+
+-- component marengo-hug:
+optional caption title:
+body body:
+ftd.color backgroundcolor: $inherited.colors.background.base
+
+-- ftd.column:
+width: fill-container
+margin-top.px: 24
+margin-bottom.px: 24
+types: $typo.types
+
+-- quote-2-desktop: $marengo-hug.title
+if: { ftd.device != "mobile" }
+body: $marengo-hug.body
+backgroundcolor: $marengo-hug.backgroundcolor
+
+-- quote-2-mobile: $marengo-hug.title
+if: { ftd.device == "mobile" }
+body: $marengo-hug.body
+backgroundcolor: $marengo-hug.backgroundcolor
+
+-- end: ftd.column
+
+-- end: marengo-hug
+
+
+
+
+
+
+
+
+
+
+-- component quote-2-desktop:
+body body:
+optional caption title:
+ftd.color backgroundcolor: $inherited.colors.background.base
+
+-- ftd.column:
+width: fill-container
+background.solid: $quote-2-desktop.backgroundcolor
+margin-top.px: 20
+margin-bottom.px: 24
+max-width.fixed.px: 2056
+
+-- ftd.row:
+width: fill-container
+border-left-width.px: 4
+padding-left.px: 40
+border-color: $inherited.colors.border
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.text: 
+text: $quote-2-desktop.body
+color: $inherited.colors.text
+role: $inherited.types.copy-large
+;;style: italic -- TODO FTD 0.3
+text-align: end
+
+-- ftd.row:
+align-self: end
+spacing.fixed.px: 8
+margin-top.px: 16
+
+-- ftd.text: ~
+align-self: center
+color: $inherited.colors.text
+role: $inherited.types.copy-small
+
+-- ftd.text: $quote-2-desktop.title
+align-self: center
+color: $inherited.colors.text
+role: $inherited.types.fine-print
+white-space: nowrap
+;;style: italic -- TODO FTD 0.3
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: quote-2-desktop
+
+
+
+
+
+
+
+
+
+
+-- component quote-2-mobile:
+optional caption title:
+body body:
+ftd.color backgroundcolor:
+
+-- ftd.column:
+width: fill-container
+background.solid: $quote-2-mobile.backgroundcolor
+max-width.fixed.px: 2056
+
+-- ftd.row:
+width: fill-container
+border-left-width.px: 4
+padding-left.px: 32
+border-color: $inherited.colors.border
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.text: 
+text: $quote-2-mobile.body
+color: $inherited.colors.text
+role: $inherited.types.copy-small
+;;style: italic -- TODO FTD 0.3
+text-align: end
+
+-- ftd.row:
+align-self: end
+spacing.fixed.px: 8
+margin-top.px: 16
+
+-- ftd.text: ~
+color: $inherited.colors.text
+role: $inherited.types.copy-small
+
+-- ftd.text: $quote-2-mobile.title
+align-self: end
+color: $inherited.colors.text
+role: $inherited.types.fine-print
+white-space: nowrap
+;;style: italic -- TODO FTD 0.3
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: quote-2-mobile
