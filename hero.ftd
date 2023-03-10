@@ -1,0 +1,523 @@
+-- import: fifthtry.github.io/ms-docs/hero as hero-docs
+-- import: fifthtry.github.io/virgil-font-typography as typo
+
+
+
+-- my-ds.page:
+
+-- hero-docs.hero-docs:
+
+-- hero-without-image: Title of the hero component
+cta-text-1: Get Started
+cta-link-1: /
+cta-text-2: Shop now
+cta-link-2: /
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+incididunt ut labore et dolore magna.
+
+-- hero-with-image: Title of the hero component
+cta-text-1: Get Started
+cta-link-1: /
+cta-text-2: Shop now
+cta-link-2: /
+image: $assets.files.static.wireframes.image-icon.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+tempor incididunt ut labore et dolore magna.
+
+
+-- end: hero-docs.hero-docs
+
+-- end: my-ds.page
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- component hero-with-image:
+caption title:
+optional string cta-text-1:
+optional string cta-link-1:
+optional string cta-text-2:
+optional string cta-link-2:
+optional $common.author-meta author: 
+optional ftd.image-src image: 
+optional body body:
+
+-- ftd.column:
+width: fill-container
+types: $typo.types
+
+-- hero-desktop-with-image:
+if: { ftd.device != "mobile" }
+title: $hero-with-image.title
+cta-text-1: $hero-with-image.cta-text-1
+cta-link-1: $hero-with-image.cta-link-1
+cta-text-2: $hero-with-image.cta-text-2
+cta-link-2: $hero-with-image.cta-link-2
+author: $hero-with-image.author 
+image: $hero-with-image.image
+body: $hero-with-image.body
+
+-- hero-mobile-with-image:
+if: { ftd.device == "mobile" }
+title: $hero-with-image.title
+cta-text-1: $hero-with-image.cta-text-1
+cta-link-1: $hero-with-image.cta-link-1
+cta-text-2: $hero-with-image.cta-text-2
+cta-link-2: $hero-with-image.cta-link-2
+author: $hero-with-image.author 
+image: $hero-with-image.image
+body: $hero-with-image.body
+
+-- end: ftd.column
+
+-- end: hero-with-image
+
+
+
+
+
+
+
+
+
+
+-- component hero-desktop-with-image:
+caption title:
+optional string cta-text-1:
+optional string cta-link-1:
+optional string cta-text-2:
+optional string cta-link-2:
+optional $common.author-meta author: 
+optional ftd.image-src image: 
+optional body body:
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 60
+
+-- ftd.column:
+width.fixed.percent: 50
+align-content: center
+
+-- ftd.image: 
+if: { hero-desktop-with-image.image != NULL }
+src: $hero-desktop-with-image.image
+max-width: fill-container
+
+-- end: ftd.column
+
+-- ftd.column:
+width.fixed.percent: 50
+spacing.fixed.px: 40
+
+-- tf.h1: $hero-desktop-with-image.title
+
+$hero-desktop-with-image.body
+
+-- ftd.column:
+if: { !ftd.is_empty(hero-desktop-with-image.author) }
+
+-- ftd.row:
+spacing.fixed.px: 18
+align-content: center
+
+-- ftd.image:
+src: $hero-desktop-with-image.author.image
+width.fixed.px: 64
+height.fixed.px: 64
+border-radius.px: 500
+
+-- ftd.column:
+
+-- ftd.text: $hero-desktop-with-image.author.title
+role: $inherited.types.copy-small
+color: $inherited.colors.text-strong
+margin-bottom.px: 10
+
+-- ftd.row:
+margin-bottom.px: 8
+
+-- ftd.text: $hero-desktop-with-image.author.profile
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+
+-- ftd.text: ,
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+
+-- ftd.text: $hero-desktop-with-image.author.company
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+padding-left.px: 5
+
+-- end: ftd.row
+
+-- ftd.row:
+spacing.fixed.px: 10
+align-content: center
+
+-- ftd.image:
+src: $assets.files.static.wireframes.thumbsup.svg
+width.fixed.px: 16
+height.fixed.px: 16
+
+-- ftd.text: 12
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+
+-- ftd.image:
+src: $assets.files.static.wireframes.thumbsdown.svg
+width.fixed.px: 16
+height.fixed.px: 16
+
+-- ftd.text: 0
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- ftd.row:
+spacing.fixed.px: 60
+
+-- ftd.text: $hero-desktop-with-image.cta-text-1
+if: {  hero-desktop-with-image.cta-text-1 != NULL }
+role: $inherited.types.button-medium
+color: $inherited.colors.text-strong
+background.solid: $inherited.colors.background.step-2
+padding-horizontal.px: 20
+padding-vertical.px: 12
+border-radius.px: 6
+link: $hero-desktop-with-image.cta-link-1
+
+-- ftd.text: $hero-desktop-with-image.cta-text-2
+if: {  hero-desktop-with-image.cta-text-2 != NULL }
+role: $inherited.types.button-medium
+color: $inherited.colors.text-strong
+background.solid: $inherited.colors.background.step-2
+padding-horizontal.px: 20
+padding-vertical.px: 12
+border-radius.px: 6
+link: $hero-desktop-with-image.cta-link-2
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: hero-desktop-with-image
+
+
+
+
+
+
+
+
+
+
+-- component hero-mobile-with-image:
+caption title:
+optional string cta-text-1:
+optional string cta-link-1:
+optional string cta-text-2:
+optional string cta-link-2:
+optional $common.author-meta author: 
+optional ftd.image-src image: 
+optional body body:
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 60
+
+-- ftd.column:
+width: fill-container
+align-content: center
+
+-- ftd.image: 
+if: { hero-mobile-with-image.image != NULL }
+src: $hero-mobile-with-image.image
+max-width: fill-container
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 40
+
+-- tf.h1: $hero-mobile-with-image.title
+
+$hero-mobile-with-image.body
+
+-- ftd.column:
+if: { !ftd.is_empty(hero-mobile-with-image.author) }
+
+-- ftd.row:
+spacing.fixed.px: 18
+align-content: center
+
+-- ftd.image:
+src: $hero-mobile-with-image.author.image
+width.fixed.px: 64
+height.fixed.px: 64
+border-radius.px: 500
+
+-- ftd.column:
+
+-- ftd.text: $hero-mobile-with-image.author.title
+role: $inherited.types.copy-small
+color: $inherited.colors.text-strong
+margin-bottom.px: 10
+
+-- ftd.row:
+margin-bottom.px: 8
+
+-- ftd.text: $hero-mobile-with-image.author.profile
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+
+-- ftd.text: ,
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+
+-- ftd.text: $hero-mobile-with-image.author.company
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+padding-left.px: 5
+
+-- end: ftd.row
+
+-- ftd.row:
+spacing.fixed.px: 10
+align-content: center
+
+-- ftd.image:
+src: $assets.files.static.wireframes.thumbsup.svg
+width.fixed.px: 16
+height.fixed.px: 16
+
+-- ftd.text: 12
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+
+-- ftd.image:
+src: $assets.files.static.wireframes.thumbsdown.svg
+width.fixed.px: 16
+height.fixed.px: 16
+
+-- ftd.text: 0
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 60
+align-content: center
+
+-- ftd.text: $hero-mobile-with-image.cta-text-1
+if: {  hero-mobile-with-image.cta-text-1 != NULL }
+role: $inherited.types.button-medium
+color: $inherited.colors.text-strong
+background.solid: $inherited.colors.background.step-2
+padding-horizontal.px: 20
+padding-vertical.px: 12
+border-radius.px: 6
+link: $hero-mobile-with-image.cta-link-1
+
+-- ftd.text: $hero-mobile-with-image.cta-text-2
+if: {  hero-mobile-with-image.cta-text-2 != NULL }
+role: $inherited.types.button-medium
+color: $inherited.colors.text-strong
+background.solid: $inherited.colors.background.step-2
+padding-horizontal.px: 20
+padding-vertical.px: 12
+border-radius.px: 6
+link: $hero-mobile-with-image.cta-link-2
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: hero-mobile-with-image
+
+
+
+
+
+
+
+
+
+
+-- component hero-without-image:
+caption title:
+optional string cta-text-1:
+optional string cta-link-1:
+optional string cta-text-2:
+optional string cta-link-2:
+optional body body:
+
+-- ftd.column:
+width: fill-container
+types: $typo.types
+
+-- hero-desktop-without-image:
+if: { ftd.device != "mobile" }
+title: $hero-without-image.title
+cta-text-1: $hero-without-image.cta-text-1
+cta-link-1: $hero-without-image.cta-link-1
+cta-text-2: $hero-without-image.cta-text-2
+cta-link-2: $hero-without-image.cta-link-2
+body: $hero-without-image.body
+
+-- hero-mobile-without-image:
+if: { ftd.device == "mobile" }
+title: $hero-without-image.title
+cta-text-1: $hero-without-image.cta-text-1
+cta-link-1: $hero-without-image.cta-link-1
+cta-text-2: $hero-without-image.cta-text-2
+cta-link-2: $hero-without-image.cta-link-2
+body: $hero-without-image.body
+
+-- end: ftd.column
+
+-- end: hero-without-image
+
+
+
+
+
+
+
+
+
+
+-- component hero-desktop-without-image:
+caption title:
+optional string cta-text-1:
+optional string cta-link-1:
+optional string cta-text-2:
+optional string cta-link-2:
+optional body body:
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 40
+
+-- tf.h1: $hero-desktop-without-image.title
+
+$hero-desktop-without-image.body
+
+
+-- ftd.row:
+spacing.fixed.px: 60
+
+-- ftd.text: $hero-desktop-without-image.cta-text-1
+if: { hero-desktop-without-image.cta-text-1 != NULL }
+role: $inherited.types.button-medium
+color: $inherited.colors.text-strong
+background.solid: $inherited.colors.background.step-2
+padding-horizontal.px: 20
+padding-vertical.px: 12
+border-radius.px: 6
+link: $hero-desktop-without-image.cta-link-1
+
+-- ftd.text: $hero-desktop-without-image.cta-text-2
+if: { hero-desktop-without-image.cta-text-2 != NULL }
+role: $inherited.types.button-medium
+color: $inherited.colors.text-strong
+background.solid: $inherited.colors.background.step-2
+padding-horizontal.px: 20
+padding-vertical.px: 12
+border-radius.px: 6
+link: $hero-desktop-without-image.cta-link-2
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: hero-desktop-without-image
+
+
+
+
+
+
+
+
+
+
+-- component hero-mobile-without-image:
+caption title:
+optional string cta-text-1:
+optional string cta-link-1:
+optional string cta-text-2:
+optional string cta-link-2:
+optional body body:
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 40
+
+-- tf.h1: $hero-mobile-without-image.title
+
+$hero-mobile-without-image.body
+
+
+-- ftd.row:
+spacing.fixed.px: 60
+
+-- ftd.text: $hero-mobile-without-image.cta-text-1
+if: { hero-mobile-without-image.cta-text-1 != NULL }
+role: $inherited.types.button-medium
+color: $inherited.colors.text-strong
+background.solid: $inherited.colors.background.step-2
+padding-horizontal.px: 20
+padding-vertical.px: 12
+border-radius.px: 6
+link: $hero-mobile-without-image.cta-link-1
+
+-- ftd.text: $hero-mobile-without-image.cta-text-2
+if: { hero-mobile-without-image.cta-text-2 != NULL }
+role: $inherited.types.button-medium
+color: $inherited.colors.text-strong
+background.solid: $inherited.colors.background.step-2
+padding-horizontal.px: 20
+padding-vertical.px: 12
+border-radius.px: 6
+link: $hero-mobile-without-image.cta-link-2
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: hero-mobile-without-image
+
