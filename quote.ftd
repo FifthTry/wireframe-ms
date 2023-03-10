@@ -85,7 +85,7 @@ backgroundcolor: $charcoal.backgroundcolor
 
 -- component quote-desktop:
 optional caption title:
-optional ftd.image-src quote-icon: $assets.files.static.quotes.svg
+optional ftd.image-src quote-icon: https://fifthtry.github.io/bling/-/fifthtry.github.io/bling/static/quotes.svg
 optional body body: 
 optional ftd.image-src avatar:
 optional ftd.image-src logo:
@@ -174,7 +174,7 @@ color: $inherited.colors.text
 
 -- component quote-mobile:
 optional caption title:
-optional ftd.image-src quote-icon: $assets.files.static.quotes.svg
+optional ftd.image-src quote-icon: https://fifthtry.github.io/bling/-/fifthtry.github.io/bling/static/quotes.svg
 optional body body: 
 optional ftd.image-src avatar:
 optional ftd.image-src logo:
