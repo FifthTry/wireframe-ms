@@ -21,4 +21,9 @@
 -- fastn.sitemap:
 
 # Home: index.html
-- Master `hero` component: index.html
+- Master `hero` component: hero/
+- Master `button` component: button/
+- Master `quote` component: quote/
+
+# GitHub
+  url: https://github.com/FifthTry/wireframe-ms
